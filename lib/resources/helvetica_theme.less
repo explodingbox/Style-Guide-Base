@@ -1,0 +1,568 @@
+//Theme: Basic
+
+
+
+
+
+
+
+
+//Colours
+
+  @color_a: red;
+  @color_b: #000;
+  @color_c: #000;
+  @color_d: #000;
+  @color_e: #000;
+  @black: #111;
+  @white: #fff;
+
+  .selected_text {
+  	background: #f2f2f2;
+  	color: #000;
+  }
+
+  ::selection 	   {.selected_text}
+  ::-moz-selection {.selected_text}
+
+  * {
+    -webkit-tap-highlight-color: rgba(0,0,0,0.05);
+  }
+
+
+
+
+
+
+
+
+
+
+
+//Typography
+
+body {
+  font-size: 100%;
+  font-family: 'helvetica-neue','helvetica','arial','sans';
+  line-height: 1.4;
+  color: @black;
+}
+
+.reversed {
+  background-color: @black;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 1em 0;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: @color_a;
+}
+
+h1 {
+  font-size: 200%:
+  margin: 0;
+  padding: 0.5em 0 0.25em 0;
+  color: @color_a;
+}
+
+h2 {
+  font-size: 150%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+h3 {
+  font-size: 125%;
+  margin: 0;
+  padding: 0.5em 0 0.5em 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0 0 1em 1.2em;
+}
+
+ol {
+  margin: 0;
+  padding: 0 0 1em 1.4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Forms & UI
+
+input {
+  display: block;
+  border: 1px solid #aaa;
+  padding: 0.5em;
+  font-size: 100%;
+  margin-bottom: 1em;
+  width: 15em;
+}
+
+.reversed input {
+  background-color: #222;
+  color: @white;
+}
+
+input.large {
+  width: 30em;
+}
+input.small {
+  width: 7em;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
+label {
+  padding-bottom: 0.5em;
+  display: block;
+  clear: both;
+}
+
+.radioset, .checkboxset {
+  overflow: hidden;
+  padding-bottom: 1em;
+  label {
+    display: block;
+    padding: 0.2em 1em 0.2em 0;
+    line-height: 1;
+  }
+  input {
+    display: inline;
+    width: auto;
+    margin: 0 0.5em 0 0.2em;
+    padding: 0;
+  }
+}
+
+textarea {
+  display: block;
+  border: 1px solid #aaa;
+  font-size: 100%;
+  padding: 0.5em;
+  width: 30em;
+  max-width: 30em;
+  height: 10em;
+  margin-bottom: 1em;
+}
+
+.reversed textarea {
+  background-color: #222;
+  color: @white;
+}
+
+select {
+  margin-bottom: 1em;
+  width: 16em;
+  font-size: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #444;
+  margin: 2em 0;
+}
+
+.reversed hr {
+  border-top: 1px solid #aaa;
+}
+
+
+
+
+
+
+
+
+
+//Custom UI
+
+button {
+  .rounded(0.3em);
+  .box-shadow(0, 0.05em, 0.05em, rgba(0,0,0,0.2));
+  background-color: #fefefe;
+  border: 1px solid #aaa;
+  padding: 0.2em 0.8em 0.2em 0.8em;
+  font-size: 100%;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: capitalize;
+}
+
+.reversed button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: @white;
+}
+
+button:disabled {
+  font-weight: normal;
+  opacity: 0.5;
+}
+
+button.alt {
+  font-weight: normal;
+}
+
+button.l {
+  font-size: 150%;
+}
+
+button.s {
+  font-size: 70%;
+  font-weight: normal;
+}
+
+button.mousedown {
+  .inset-shadow;
+  background-color: #fafafa;
+}
+
+.reversed button.mousedown {
+  background-color: #222;
+  .inset-shadow(0px,0px,0.2em,#000);
+}
+
+.segmented_select {
+  overflow: hidden;
+  margin-bottom: 1em;
+  button {
+    margin: 0;
+    float: left;
+    .rounded(0);
+    border-left: none;
+    font-weight: normal;
+  }
+  button.first {
+    border-left: 1px solid #aaa;
+    .multiRounded(0.5em,0,0.5em,0);
+    padding-left: 1em;
+  }
+  button.active {
+    color: @black;
+    background-color: #eee;
+    .inset-shadow;
+  }
+  button.last {
+    .multiRounded(0,0.5em,0,0.5em);
+    padding-right: 1em;
+  }
+}
+
+.reversed .segmented_select {
+  button.first {
+    border-left: 1px solid #444;
+  }
+}
+
+.range_slider {
+  overflow: hidden;
+  position: relative;
+  width: 15em;
+  height: 1.2em;
+  margin-bottom: 1em;
+  .track {
+    height: 0.3em;
+    margin-top: 0.4em;
+    position: absolute;
+    left: 0.5em;
+    right: 0.5em;
+    overflow: hidden;
+    .rounded;
+    .inset-shadow;
+    border: 1px solid #bbb;
+  }
+  .thumb {
+    width: 1em;
+    height: 1em;
+    .rounded(1em);
+    border: 1px solid #aaa;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: #fff;
+    .box-shadow(0,0.1em, 0.1em, rgba(0,0,0,0.1));
+  }
+}
+
+.reversed .range_slider {
+  .track {
+    border: 1px solid #333;
+    border-bottom: 1px solid #666;
+    background-color: #222;
+  }
+  
+  .thumb {
+    background-color: #222;
+    border: 1px solid #666;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+//Tables
+
+table {
+  font-size: 85%;
+  width: 100%;
+  th {
+    padding: 0.5em 2%;
+    text-align: left;
+    border-bottom: 1px solid @black;
+  }
+  td {
+    padding: 0.5em 2%;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+  }
+}
+
+.reversed table {
+  th {
+    border-bottom: 1px solid @white;
+  }
+  tr:nth-child(even) td {
+    background-color: #222;
+    border-bottom: none;
+  }
+  tr:nth-child(odd) td {
+    border-bottom: none;
+  }
+}
+
+
+table.sorting {
+  th {
+    color: #aaa;
+    font-weight: normal;
+    color: #aaa;
+  }
+  th.active {
+    font-weight: bold;
+    color: @black;
+  }
+  th.active:after {
+    font-size: 50%;
+    content: "⬇";
+  }
+}
+
+
+.reversed table.sorting {
+  th.active {
+    color: #fff;
+  }
+}
+
+table.nowrap {
+  td,th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  }
+}
+
+
+//Navigation
+
+.tabset {
+  .nav {
+    padding: 0.2em 0 0 0;
+    overflow: hidden;
+    a {
+      border: 1px solid #aaa;
+      border-bottom: 0;
+      font-size: 80%;
+      padding: 0.5em 5% 0.2em 5%;
+      text-decoration: none;
+      color: @black;
+      float: left;
+      height: 1.5em;
+      margin-right: 0.2em;
+      cursor: default;
+    }
+    a.active {
+      background-color: #fafafa;
+    }
+    border-bottom: 1px solid #aaa;
+  }
+  .section {
+    display: none;
+    clear: both;
+  }
+  .section.active {
+    display:block;
+  }
+}
+
+.reversed .tabset {
+  .nav {
+    a {
+      color: @white;
+    }
+    a.active {
+      background-color: #444;
+    }
+  }
+  
+}
+
+
+.tabset.pill {
+  .nav {
+    border: none;
+    padding: 0.5em 0;
+    a {
+      border: none;
+      .rounded(2em);
+      margin: 0;
+      padding: 0.3em 2% 0em 2%;
+    }
+    a.active {
+      background-color: @color_a;
+      color: @white;
+    }
+  }  
+}
+
+.reversed .tabset.pill {
+  .nav {
+    a {
+      color: @white;
+    }
+    a.active {
+      background-color: #444;
+    }
+  }
+  
+}
+
+
+.pagination {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid #aaa;
+    overflow: hidden;
+    li {
+      float: left;
+      a {
+        display: block;
+        padding: 0.2em 0.5em;
+        border: 1px solid #aaa;
+        border-left: none;
+        text-decoration: none;
+        font-size: 90%;
+        color: @black;
+      }
+      a.active {
+        color: @white;
+        background-color: @color_a;
+      }
+    }  
+  } 
+}
+
+.reversed .pagination {
+  ul {
+    border-left: 1px solid #333;
+    li {
+      a {
+        color: @white;
+        border: 1px solid #333;
+        border-left: none;
+      }
+    }
+  }
+  
+}
+
+
+
+
+
+
+
+
+//Messaging
+
+.blockmessage {
+  border: 1px solid #eee;
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 90%;
+  background-color: #fefefe;
+  .title {
+   padding: 0.7em 1em; 
+   font-weight: bold;
+  }
+  .body {
+    padding: 0em 1em 1em 1em;
+  }
+  .actions {
+    overflow: hidden;
+    float: right;
+    padding: 0.5em;
+    button {
+      float: right;
+    }
+  }
+}
+
+.blockmessage.error {
+  background-color: #FCE8E8;
+  border: 1px solid #C00;
+}
+
+.blockmessage.warning {
+  background-color: #FEFDED;
+  border: 1px solid #FAC500;
+}
+
+.reversed {
+  
+  .blockmessage {
+    background-color: #222;
+  }
+  
+  .blockmessage.error {
+    background-color: #251717;
+  }
+  
+}
+
+
