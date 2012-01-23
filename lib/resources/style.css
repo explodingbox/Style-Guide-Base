@@ -407,8 +407,6 @@ table.nowrap td, table.nowrap th {
   overflow: hidden;
   font-size: 90%;
   background-color: #fefefe;
-  /*  .box-shadow;*/
-
 }
 .blockmessage .title {
   padding: 0.7em 1em;
@@ -427,9 +425,11 @@ table.nowrap td, table.nowrap th {
 }
 .blockmessage.error {
   background-color: #FCE8E8;
+  border: 1px solid #C00;
 }
 .blockmessage.warning {
   background-color: #FEFDED;
+  border: 1px solid #FAC500;
 }
 .reversed .blockmessage {
   background-color: #222;
